@@ -1,0 +1,9 @@
+
+<template name = "inputField">
+    <label for = "usr">{{label}}:</label>
+    <input type="text" name = {{name}}  class ="form-group" {{class}} placeholder="Enter the text here" id = {{id}}>
+    {{#if error}}
+            {{>errorTemplate id ="userNameError" value = error}}
+    {{/if}}
+</template>
+

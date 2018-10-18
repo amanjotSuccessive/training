@@ -1,0 +1,17 @@
+<body>
+    <div class="container">
+        <header>
+            <form class="new-task">
+                <input type="text" name="tet" placeholder="Type here">
+            </form>
+            
+        </header>
+
+        <ul>
+            {{#each tasks}}
+            {{> task}}
+            {{/each}}
+        </ul>
+    </div>
+</body>
+

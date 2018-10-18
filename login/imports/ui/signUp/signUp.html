@@ -1,0 +1,33 @@
+<template name = "signUp">
+        <form class = "signUpForm">
+            <!-- {{>inputLabel   value= "User Name : " class = "newUser"}} -->
+            {{>inputField  label = "User Name :" name= "userSignUp" class = "newUser" validate = true id="userName" }}
+            <!-- {{#if error}}
+            {{>errorTemplate id ="userNameError" value = error}}
+            {{/if}} -->
+            <br>
+            <!-- {{>inputLabel   value= "City :" class = "newUser"}} -->
+            {{>inputField  label = "   City : " name= "citySignUp" class = "newUser" id= "userCity"}}
+            <!-- {{>errorTemplate id ="userCityError" }} -->
+            <br>
+            <!-- {{>inputLabel   value= "Address :" class = "newUser"}} -->
+            {{>inputField label = "Address : "  name= "addressSignUp" class = "newUser" id = 'userAddress'}}
+            <!-- {{>errorTemplate id ="userAddressError" }} -->
+            <br>
+            {{>inputLabel   value= "Age ::" class = "newUser"}}
+            {{>inputSelect  label = "Age : " name= "ageSignUp" class = "newUser" id = "userAge"}}
+            <!-- {{>errorTemplate id ="userAgeError" }} -->
+            <br>
+            {{>inputLabel   value= "Agree :: " class = "newUser"}} 
+            {{>inputCheck label = "Agree : "  name= "agreeSignUp" class = "newUser" id = "userAgree"}}
+            <!-- {{>errorTemplate id ="userAgreeError" }} -->
+            <br>
+            <!-- {{>inputLabel   value= "User Password :" class = "newUser"}} -->
+            {{>inputField  label = " Password : "  name= "passwordSignUp" class = "newUser" id = 'userPassword' handleChange=changeHandler}}
+            <!-- {{>errorTemplate id ="userPasswordError" }} -->
+            <br>        
+            {{>inputSubmitButton type = "submit" name = "signUpSignUp" class ="newUser" value = "Submit"}} 
+            <a href = "http://localhost:3000/login"> Already a User </a>
+        </form>
+</template>
+<!-- userName userCity userAddress userAge userAgree userPassword -->

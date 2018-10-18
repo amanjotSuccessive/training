@@ -1,0 +1,22 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+
+    },
+
+    "rules": {
+        "prefer-destructuring": ["error", {
+            "VariableDeclarator": {
+                "array": true,
+                "object": true
+            },
+            "AssignmentExpression": {
+                "array": true,
+                "object": true
+            }
+        }],
+        "no-console": "off",
+        "enforceForRenamedProperties": false
+    }
+}

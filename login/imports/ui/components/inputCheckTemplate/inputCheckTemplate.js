@@ -1,0 +1,1 @@
+import './inputCheckTemplate.html';

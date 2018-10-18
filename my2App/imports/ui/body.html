@@ -1,0 +1,101 @@
+<body>
+
+    <h1>Parent
+        <small>{{>first}}</small>
+    </h1>
+
+</body>
+
+<template name="first">
+
+    {{#each  showData}}
+        {{> last }}
+    {{/each}}
+</template>
+<template name="last">
+        {{#each last in showLastData}}
+        <h3>{{name}}</h3>
+        <p>{{last.name}}</p>
+     {{/each}} 
+</template>  
+ 
+<template name="first2">
+
+        {{#each showData}}
+            {{>last name = name }}
+        {{/each}}
+
+    </template>
+    <template name="last2">
+            {{#each last in showLastData}}
+            <h3>{{name}}</h3>
+            <p>{{last.name}}</p>
+         {{/each}} 
+    </template>
+    <!--name = name is optional  -->
+
+
+
+
+
+
+
+     <template name="first1">
+        <div>block 1 Start
+            <br>
+            {{#each  showData}}
+             1e{{showData}} <!--return object CORRECT  AS IT IS IT'S SELF IS A OBJECT-->
+             2e{{showData.name}}<!-- INCORRECT  returning null-->
+             3e{{name}}         <!-- CORRECT object property is directly accessible-->
+             <!-- {{> last }} -->
+            {{/each}}
+<br><br>
+          {{#each first in showData}}
+            1i{{showData}}      <!-- Same as each, returning object-->   
+            2i{{showData.name}} <!-- Same as each, returning null -->   
+            3i{{name}}  <!-- Invalid in 'each .. in' case whereas its valid in each case,returning null -->
+            4i{{first}}  <!-- treating is same as point 1i -->
+            5i{{first.name}} <!--  will return value ,first.name = name of each -->
+         <!-- {{> last }} -->
+            {{/each}}
+            <br>block 1 end
+        </div>
+        </template>
+        <template name="last1">
+                {{#each last in showLastData}}
+                 <!-- <h3>{{name}}</h3>  -->
+                 <p>{{last.name}}</p>
+             {{/each}} 
+        </template>
+
+     
+        <!-- <template name="first">
+
+            {{#each first in showData }}
+            1{{first.name}}
+              {{> last }}
+            {{/each}}
+    
+        </template>
+        <template name="last">
+                {{#each last in showLastData}}
+                 <h3>{{getDetails name}}</h3>
+        <p>{{getDetails last}}</p>
+             {{/each}} 
+        </template>
+     -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
